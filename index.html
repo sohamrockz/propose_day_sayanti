@@ -23,6 +23,10 @@
     }
 
     .card {
+      <button class="music-btn" onclick="startMusic()">
+      🎧 Tap to start music
+      </button>
+      
       width: 92%;
       max-width: 760px;
       background: rgba(255,255,255,0.08);
@@ -253,6 +257,13 @@
       const x = Math.random() * 200 - 100;
       const y = Math.random() * 200 - 100;
       btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+    function startMusic() {
+    const music = document.getElementById("bgm");
+    music.volume = 0.6;
+    music.play().catch(err => {
+    alert("Tap once anywhere on the page to enable music 🎶");
+    });
     }
   </script>
 
